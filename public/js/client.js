@@ -1390,7 +1390,7 @@ async function whoAreYou() {
     Swal.fire({
         allowOutsideClick: false,
         allowEscapeKey: false,
-        background: '#40A2E3',
+        background: '#416D19',
         title: 'Meetoo',
         position: 'top',
         customClass: {
