@@ -73,15 +73,14 @@
                             <div class="split-wrap invert-mobile">
                                 <div class="split-item">
                                     <div class="hero-content split-item-content center-content-mobile">
-                                        <h1 class="mt-32 mb-16 reveal-from-bottom" data-reveal-delay="150">
-                                            Meetoo<br />browser based Real-time video calls.<br />
-                                            Simple, Secure, Fast.
+                                        <h1 style="position: relative; top: 200px;" class="mt-32 mb-16 reveal-from-bottom" data-reveal-delay="150">
+                                            Room meeting<br />TNI Angkatan Darat Republik Indonesia
                                         </h1>
-                                        <p class="mt-0 mb-32 reveal-from-bottom" data-reveal-delay="300">
+                                        <!-- <p class="mt-0 mb-32 reveal-from-bottom" data-reveal-delay="300">
                                             Start your next video call with a single click. No download, plug-in, or
                                             login is required. Just get straight to talking, messaging, and sharing your
                                             screen.
-                                        </p>
+                                        </p> -->
                                     </div>
                                     <style>
                                         @media (min-width: 641px) {
@@ -96,13 +95,15 @@
                     </div>
                 </section>
 
-                <section class="cta section center-content-mobile reveal-from-bottom mb-32">
-                    <div class="container">
+                <section style="position: relative;" class="cta section center-content-mobile reveal-from-bottom mb-32">
+                    <div class="container" style="position: relative; margin-top: 100px;">
                         <div class="cta-inner section-inner cta-split br-12">
                             <div class="cta-slogan">
                                 <h3 class="m-0">
-                                    Pick a room name.<br />
-                                    How about this one?
+                                    <span style="font-size: 30px;">
+                                        Gabung room meeting.<br />
+                                        Tuliskan id room meeting anda
+                                    </span>
                                 </h3>
                             </div>
                             <div class="cta-action">
@@ -115,17 +116,19 @@
                                             type="text"
                                             value="meetoo"
                                             maxlength="32"
-                                            style="border-radius: 6px"
+                                            style="color: white; border-radius: 6px; background: transparent; border: 1px solid white;;"
                                         />
                                         <button
                                             id="genRoomButton"
                                             class="button button-primary br-6 mr-8 mb-8 fas fa-arrows-rotate"
                                             onclick="genRoom()"
+                                            style="background-color: rgb(103, 186, 129);"
                                         ></button>
                                         <button
                                             id="joinRoomButton"
                                             class="button button-primary br-6 pulse"
                                             onclick="joinRoom()"
+                                            style="background-color: rgb(103, 186, 129);"
                                         >
                                             Join Room
                                         </button>
@@ -180,7 +183,7 @@
                     </div>
                 </section>
 
-                <section id="features" class="features-tiles section center-content mt-32">
+                <!-- <section id="features" class="features-tiles section center-content mt-32">
                     <div class="container">
                         <div class="features-tiles-inner section-inner has-top-divider">
                             <div class="section-header">
@@ -363,9 +366,9 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
 
-                <section id="browsers" class="team section center-content">
+                <!-- <section id="browsers" style="background-color: rgb(79, 166, 79);" class="team section center-content">
                     <div class="container">
                         <div class="team-inner section-inner has-top-divider">
                             <div class="section-header center-content reveal-from-bottom">
@@ -396,9 +399,9 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
 
-                <section id="teams" class="team section center-content">
+                <!-- <section id="teams" style="background-color: rgb(79, 166, 79);" class="team section center-content">
                     <div class="container">
                         <div class="team-inner section-inner has-top-divider">
                             <div class="section-header center-content reveal-from-bottom">
@@ -408,7 +411,6 @@
                             </div>
 
                             <div class="tiles-wrap">
-                                <!-- Author -->
                                 <div class="tiles-item reveal-from-bottom">
                                     <div class="tiles-item-inner">
                                         <div class="team-item-header">
@@ -419,6 +421,7 @@
                                                     width="180"
                                                     height="180"
                                                     class="rounded-image"
+                                                    style="background-color: rgb(199, 209, 199);"
                                                 />
                                             </div>
                                         </div>
@@ -438,57 +441,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
-
-                <section id="tryEasier" class="section">
-                    <div class="container">
-                        <div class="section-inner has-top-divider">
-                            <div class="container-xs">
-                                <div class="section-header center-content">
-                                    <h2 class="m-0">Try an easier, more secure way of calling.</h2>
-                                </div>
-                                <div class="center-content">
-                                    <a
-                                        class="button button-primary button-wide-mobile br-6 pulse"
-                                        style="
-                                            border: 0;
-                                            background: linear-gradient(100deg, #376df9 0, #ff5fa0 75%, #ffc55a 100%);
-                                        "
-                                        href="/newcall"
-                                        >Try now</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="poweredBy" class="clients section">
-                    <div class="container">
-                        <h4 class="mt-24" style="text-align: center; color: grey">Powered by</h4>
-                        <div class="clients-inner section-inner has-animations has-top-divider has-bottom-divider">
-                            <ul class="list-reset">
-                                <li class="reveal-from-top" data-reveal-delay="150">
-                                    <a href="https://hetzner.cloud/?ref=XdRifCzCK3bn" target="_blank"
-                                        ><img
-                                            class="clients-size-logo"
-                                            src="../images/logo.png"
-                                            alt="Powered by Hetzner"
-                                    /></a> <br>
-                                    PT SOLUSI TIGA BERSAMA
-                                </li>
-                                <!-- <li class="reveal-from-top" data-reveal-delay="300">
-                                    <a href="https://www.dpbolvw.net/click-101027391-14462707" target="_blank"
-                                        ><img
-                                            class="clients-size-logo"
-                                            src="../advertisers/ContaboLogo.png"
-                                            alt="Powered by Contabo"
-                                    /></a>
-                                </li> -->
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+                </section> -->
             </main>
 
             <footer id="footer" class="site-footer center-content-mobile">
@@ -496,7 +449,7 @@
                     <div class="site-footer-inner">
                         <div class="footer-top space-between text-xxs">
                             <div class="brand">
-                                <a href="/"><img src="../images/logo.png" alt="Neon" width="32" height="32" /></a>
+                                <a href="/"><img src="../images/meetoo.png" alt="Neon" width="32" height="32" /></a>
                             </div>
                             <div class="footer-social">
                                 <ul class="list-reset">
@@ -576,7 +529,7 @@
                                     </li>
                                 </ul>
                             </nav>
-                            <div class="footer-copyright">&copy; 2024 PT.SOLUSI TIGA BERSAMA, all rights reserved</div>
+                            <div class="footer-copyright" style="position: relative; bottom: 20px;">&copy; Meetoo, PT.SOLUSI TIGA BERSAMA, all rights reserved</div>
                         </div>
                     </div>
                 </div>
