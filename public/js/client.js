@@ -383,7 +383,7 @@ const pauseRecBtn = getId('pauseRecBtn');
 const resumeRecBtn = getId('resumeRecBtn');
 const recordingTime = getId('recordingTime');
 const lastRecordingInfo = getId('lastRecordingInfo');
-const themeSelect = getId('mirotalkTheme');
+const themeSelect = getId('MeetooTheme');
 const videoObjFitSelect = getId('videoObjFitSelect');
 const mainButtonsBar = getQsA('#buttonsBar button');
 const mainButtonsIcon = getQsA('#buttonsBar button i');
@@ -700,7 +700,7 @@ let isPeerAuthEnabled = false; // Username and Password required in the URL para
 
 // survey
 let surveyActive = true; // when leaving the room give a feedback, if false will be redirected to newcall page
-let surveyURL = 'https://www.questionpro.com/t/AUs7VZq00L';
+let surveyURL = '/';
 
 // Redirect on leave room
 let redirectActive = false;
@@ -2140,7 +2140,6 @@ function handleSessionDescription(config) {
                                 });
                                 console.log('Answer setLocalDescription done!');
 
-                                // https://github.com/miroslavpejic85/mirotalk/issues/110
                                 if (needToCreateOffer) {
                                     needToCreateOffer = false;
                                     handleRtcOffer(peer_id);
@@ -2278,8 +2277,8 @@ function setCustomTheme() {
 function setTheme() {
     if (themeCustom.keep) return setCustomTheme();
 
-    mirotalkTheme.selectedIndex = lsSettings.theme;
-    const theme = mirotalkTheme.value;
+    MeetooTheme.selectedIndex = lsSettings.theme;
+    const theme = MeetooTheme.value;
     switch (theme) {
         case 'dark':
             // dark theme
@@ -2299,7 +2298,7 @@ function setTheme() {
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
             document.body.style.background = 'radial-gradient(#393939, #000000)';
-            mirotalkTheme.selectedIndex = 0;
+            MeetooTheme.selectedIndex = 0;
             break;
         case 'grey':
             // grey theme
@@ -2319,7 +2318,7 @@ function setTheme() {
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
             document.body.style.background = 'radial-gradient(#666, #333)';
-            mirotalkTheme.selectedIndex = 1;
+            MeetooTheme.selectedIndex = 1;
             break;
         case 'green':
             // green theme
@@ -2339,7 +2338,7 @@ function setTheme() {
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
             document.body.style.background = 'radial-gradient(#003934, #001E1A)';
-            mirotalkTheme.selectedIndex = 2;
+            MeetooTheme.selectedIndex = 2;
             break;
         case 'blue':
             // blue theme
@@ -2359,7 +2358,7 @@ function setTheme() {
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
             document.body.style.background = 'radial-gradient(#306bac, #141B41)';
-            mirotalkTheme.selectedIndex = 3;
+            MeetooTheme.selectedIndex = 3;
             break;
         case 'red':
             // red theme
@@ -2378,7 +2377,7 @@ function setTheme() {
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
             document.body.style.background = 'radial-gradient(#69140E, #3C1518)';
-            mirotalkTheme.selectedIndex = 4;
+            MeetooTheme.selectedIndex = 4;
             break;
         // ...
         default:
@@ -5470,7 +5469,7 @@ function shareRoomByEmail() {
             const selectedDateTime = document.getElementById('datetimePicker').value;
             const roomPassword = isRoomLocked && thisRoomPassword ? 'Password: ' + thisRoomPassword + newLine : '';
             const email = '';
-            const emailSubject = `Please join our MiroTalk P2P Video Chat Meeting`;
+            const emailSubject = `Please join our Meetoo P2P Video Chat Meeting`;
             const emailBody = `The meeting is scheduled at: ${newLine} DateTime: ${selectedDateTime} ${newLine}${roomPassword}Click to join: ${roomURL} ${newLine}`;
             document.location = 'mailto:' + email + '?subject=' + emailSubject + '&body=' + emailBody;
         },
@@ -5561,20 +5560,7 @@ async function handleVideo(e, init, force = null) {
         initVideoBtn.className = videoClassName;
         setTippy(initVideoBtn, videoStatus ? 'Stop the video' : 'Start the video', 'top');
 
-        var initVideoContainer = document.querySelector(".init-video-container");
-        initVideoContainer.style.backgroundImage = "url('https://cdn.idntimes.com/content-images/community/2021/02/https-wwwhistorycom-image-mtu3odc3nju5mty3mdqxmjq3-this-day-in-history-05031469-niccolo-machiavelli-born-ea4978af2d892604e8d47209cb242257-24b5b07a61bbff6787c66f138889ef41_600x400.jpg')";
-
-        if (videoStatus == true) {
-            alert("Nyala")
-            elemDisplay(initVideo, false);
-            // elemDisplay(initVideo, true, 'block')
-        } else {
-            alert("Tidak Nyala")
-            elemDisplay(initVideo, true, 'block')
-            // elemDisplay(initVideo, false);
-        }
-
-        // videoStatus ? elemDisplay(initVideo, true, 'block') : elemDisplay(initVideo, false);
+        videoStatus ? elemDisplay(initVideo, true, 'block') : elemDisplay(initVideo, false);
         
         initVideoSelect.disabled = !videoStatus;
         lS.setInitConfig(lS.MEDIA_TYPE.video, videoStatus);
@@ -9578,8 +9564,8 @@ function showAbout() {
     Swal.fire({
         background: swBg,
         position: 'center',
-        title: '<strong>WebRTC P2P</strong>',
-        imageAlt: 'mirotalk-about',
+        title: '<strong>Meetoo</strong>',
+        imageAlt: 'meetoo-about',
         imageUrl: images.about,
         customClass: { image: 'img-about' },
         html: `
@@ -9589,22 +9575,22 @@ function showAbout() {
                 id="support-button" 
                 data-umami-event="Support button" 
                 class="pulsate" 
-                onclick="window.open('https://codecanyon.net/user/miroslavpejic85')">
+                onclick="window.open('')">
                 <i class="${className.heart}" ></i>&nbsp;Support
             </button>
             <br /><br />
             Author:<a 
                 id="linkedin-button" 
                 data-umami-event="Linkedin button" 
-                href="https://www.linkedin.com/in/miroslav-pejic-976a07101/" target="_blank"> 
-                Miroslav Pejic
+                href="" target="_blank"> 
+                Meetoo
             </a>
             <br /><br />
             Email:<a 
                 id="email-button" 
                 data-umami-event="Email button" 
-                href="mailto:miroslav.pejic.85@gmail.com?subject=MiroTalk P2P info"> 
-                miroslav.pejic.85@gmail.com
+                href="mailto:meetoo@gmail.com?subject=Meetoo"> 
+                Meetoo
             </a>
         </div>
         `,
@@ -9618,40 +9604,41 @@ function showAbout() {
  */
 function leaveRoom() {
     checkRecording();
-    if (surveyActive) {
-        leaveFeedback();
-    } else {
-        redirectOnLeave();
-    }
+    redirectOnLeave();
+    // if (surveyActive) {
+    //     leaveFeedback();
+    // } else {
+    //     redirectOnLeave();
+    // }
 }
 
 /**
  * Ask for feedback when room exit
  */
-function leaveFeedback() {
-    Swal.fire({
-        allowOutsideClick: false,
-        allowEscapeKey: false,
-        showDenyButton: true,
-        background: swBg,
-        imageUrl: images.feedback,
-        title: 'Leave a feedback',
-        text: 'Do you want to rate your MiroTalk experience?',
-        confirmButtonText: `Yes`,
-        denyButtonText: `No`,
-        showClass: { popup: 'animate__animated animate__fadeInDown' },
-        hideClass: { popup: 'animate__animated animate__fadeOutUp' },
-    }).then((result) => {
-        if (result.isConfirmed) {
-            openURL(surveyURL);
-        } else {
-            redirectOnLeave();
-        }
-    });
-}
+// function leaveFeedback() {
+//     Swal.fire({
+//         allowOutsideClick: false,
+//         allowEscapeKey: false,
+//         showDenyButton: true,
+//         background: swBg,
+//         imageUrl: images.feedback,
+//         title: 'Leave a feedback',
+//         text: 'Do you want to rate your Meetoo experience?',
+//         confirmButtonText: `Yes`,
+//         denyButtonText: `No`,
+//         showClass: { popup: 'animate__animated animate__fadeInDown' },
+//         hideClass: { popup: 'animate__animated animate__fadeOutUp' },
+//     }).then((result) => {
+//         if (result.isConfirmed) {
+//             openURL(surveyURL);
+//         } else {
+//             redirectOnLeave();
+//         }
+//     });
+// }
 
 function redirectOnLeave() {
-    redirectActive ? openURL(redirectURL) : openURL('/newcall');
+    redirectActive ? openURL(redirectURL) : openURL('/');
 }
 
 /**

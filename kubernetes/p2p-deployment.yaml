@@ -17,8 +17,8 @@ spec:
                 app: p2p
         spec:
             containers:
-                - image: mirotalk/p2p:latest
-                  name: mirotalk
+                - image: meetoo/p2p:latest
+                  name: meetoo
                   ports:
                       - containerPort: 3000
                   volumeMounts:
